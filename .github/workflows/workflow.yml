@@ -14,15 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: yarn install and build
-        run: |
-          # Build the project, then
-          # deploy to Azure Web App.
-          yarn install
-          yarn run build
+        run: yarn install
+        run: yarn build
       - name: "Deploy to Azure WebApp"
         uses: azure/webapps-deploy@v2
         with:
