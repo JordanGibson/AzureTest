@@ -17,13 +17,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: yarn install, build, and test
+      - name: yarn install and build
         run: |
-          # Build and test the project, then
+          # Build the project, then
           # deploy to Azure Web App.
           yarn install
-          yarn run build --if-present
-          yarn run test --if-present
+          yarn run build
       - name: "Deploy to Azure WebApp"
         uses: azure/webapps-deploy@v2
         with:
