@@ -1,5 +1,6 @@
 # Install dependencies only when needed
 FROM node:lts-alpine AS deps
+LABEL org.opencontainers.image.source = 'https://github.com/JordanGibson/AzureTest'
 
 WORKDIR /opt/app
 COPY package.json yarn.lock ./
