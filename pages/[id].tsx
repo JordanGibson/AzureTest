@@ -5,7 +5,7 @@ const Id:FC = (props) => {
     const router = useRouter();
     const { id } = router.query;
   
-    return <p>Post Number: {id}</p>;
+    return <p>This is the Post Number: {id}</p>;
 };
 
 export default Id;
