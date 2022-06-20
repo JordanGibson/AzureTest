@@ -1,0 +1,52 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy container app to Azure Web App - azuregram
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Log in to container registry
+        uses: docker/login-action@v1
+        with:
+          registry: https://ghrc.io/
+          username: ${{ secrets.AzureAppService_ContainerUsername_f132a155be6b4ab98793f08b9d5e1b1a }}
+          password: ${{ secrets.AzureAppService_ContainerPassword_8ef6680b56f647e8981869b776578920 }}
+
+      - name: Build and push container image to registry
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: ghrc.io/${{ secrets.AzureAppService_ContainerUsername_f132a155be6b4ab98793f08b9d5e1b1a }}/ghcr.iojordangibson/azuretest:${{ github.sha }}
+          file: ./Dockerfile
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: "production"
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: "azuregram"
+          slot-name: "production"
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_eab4b6859ced4ccfa5b2c88f40e20e39 }}
+          images: "ghrc.io/${{ secrets.AzureAppService_ContainerUsername_f132a155be6b4ab98793f08b9d5e1b1a }}/ghcr.iojordangibson/azuretest:${{ github.sha }}"
