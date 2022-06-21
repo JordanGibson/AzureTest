@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { Avatar, Card, Grid } from "@nextui-org/react";
-import Post from "./Post";
+import Post from "./Post/Post";
 
 export default function Feed() {
   return (
