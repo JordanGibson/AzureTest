@@ -16,7 +16,7 @@ ENV NODE_ENV=production
 WORKDIR /opt/app
 COPY . .
 COPY --from=deps /opt/app/node_modules ./node_modules
-RUN --mount=type=secret,id=DATABASE_URL yarn build
+RUN yarn build
 
 # Production image, copy all the files and run next
 FROM node:lts-alpine AS runner

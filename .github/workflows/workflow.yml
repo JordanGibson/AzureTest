@@ -64,8 +64,7 @@ jobs:
           push: true
           tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
           file: ./Dockerfile
-          secrets: |
-            "DATABASE_URL=${{ secrets.DATABASE_URL }}"
+          build-args: "DATABASE_URL=${{secrets.DATABASE_URL}}"
 
   deploy:
     permissions:
