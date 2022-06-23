@@ -185,28 +185,6 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@injex/core@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@injex/core/-/core-3.1.1.tgz#0d62a93c8cb2636e75d529408ddcca07bdefec2f"
-  integrity sha512-uvH2RHJoTo+tI5hpRHNBMryd4kSfzFyHzuqFdXKr7Oy64ko84K5dGp1uHktOgEfzZXrDQ35n5ZUN8jueVjPenw==
-  dependencies:
-    "@injex/stdlib" "^3.1.1"
-
-"@injex/node@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@injex/node/-/node-3.1.1.tgz#b83be04dc1a51446cb39b20f77e17cf521e7847a"
-  integrity sha512-lBpPDiMwNXkZj8dafr9VR4bibHMEe0JRzmOc+FEOXqTF44umOAq2j5NHP3up+Yj2KChG/iavHpybOKIGu3NkjQ==
-  dependencies:
-    "@injex/core" "^3.1.1"
-    glob "^7.1.6"
-
-"@injex/stdlib@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@injex/stdlib/-/stdlib-3.1.1.tgz#43e5ae3d12e58b2421465a01d6d8d1ad952d0c39"
-  integrity sha512-OlSO458yGixJswQSbf090fXiwLDni0TsQ8skU7pXD8ZF5ZHcrrplWm2kPyE5GFvIhz686I1skClJmW98M5c/yA==
-  dependencies:
-    reflect-metadata "^0.1.13"
-
 "@internationalized/date@3.0.0-rc.1":
   version "3.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.0.0-rc.1.tgz#828f79517249ac65982ec760205089a98ec56555"
@@ -2039,7 +2017,7 @@ glob@7.1.7:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.1.3, glob@^7.1.6, glob@^7.2.0:
+glob@^7.1.3, glob@^7.2.0:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.3.tgz#b8df0fb802bbfa8e89bd1d938b4e16578ed44f2b"
   integrity sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==
@@ -2843,11 +2821,6 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
-
-reflect-metadata@^0.1.13:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
-  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
 
 regenerator-runtime@^0.13.4:
   version "0.13.9"
