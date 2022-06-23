@@ -1,12 +1,7 @@
-import { useResize } from "@nextui-org/react";
-import { MediaType, Post, PrismaClient, User } from "@prisma/client";
-import { data } from "autoprefixer";
-import { time } from "console";
-import _ from "lodash";
-import { allProgress, updateProgressBar } from "./utils";
 import { createUser } from "./createUser";
+import prisma from "./prisma";
+import { allProgress, updateProgressBar } from "./utils";
 
-export const prisma = new PrismaClient();
 const USER_COUNT = 15;
 
 async function seed() {
