@@ -11,11 +11,12 @@ RUN yarn install --frozen-lockfile
 # to build the app based on some `X_TAG` in my case (Git commit hash)
 # but the code hasn't changed.
 FROM node:lts-alpine AS builder
-
 ENV NODE_ENV=production
 WORKDIR /opt/app
 COPY . .
 COPY --from=deps /opt/app/node_modules ./node_modules
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
 RUN yarn build
 
 # Production image, copy all the files and run next
